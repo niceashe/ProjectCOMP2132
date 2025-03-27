@@ -20,7 +20,7 @@ $(document).ready(function() {
 
   async function fetchWords() {
     try {
-      const response = await fetch('../data/words.json');
+      const response = await fetch('data/words.json');
 
       if (!response.ok) {
         throw new Error(`Failed to load words: ${response.status}`);
@@ -47,7 +47,7 @@ $(document).ready(function() {
     guessedLetters = [];
     wrongGuesses = 0;
     gameOver = false;
-    $hangmanImg.attr('src', `../img/start-game.png`);
+    $hangmanImg.attr('src', `img/start-game.png`);
     $resultDisplay.text('');
     $playAgainBtn.hide();
   }
@@ -78,7 +78,7 @@ $(document).ready(function() {
       revealLetter(letter);
     } else {
       wrongGuesses++;
-      $hangmanImg.attr('src', `../img/wilting-plant${wrongGuesses}.png`);
+      $hangmanImg.attr('src', `img/wilting-plant${wrongGuesses}.png`);
 
       if (wrongGuesses === maxWrongGuesses) {
         endGame(false);
@@ -110,9 +110,9 @@ $(document).ready(function() {
     $keyboard.find('button').prop('disabled', true);
   
     if (won) {
-      $hangmanImg.attr('src', '../img/winning-gif.gif') 
+      $hangmanImg.attr('src', 'img/winning-gif.gif') 
     } else {
-      $hangmanImg.attr('src', '../img/dead-garden.png'); 
+      $hangmanImg.attr('src', 'img/dead-garden.png'); 
     }
   }  
 
