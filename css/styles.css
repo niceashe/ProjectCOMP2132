@@ -1,0 +1,258 @@
+html, body {
+  height: 100vH;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header, footer {
+  width: 100%;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 5px;
+  margin: 10px auto;
+  box-sizing: border-box;
+}
+
+header {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("../img/neon_garden.png") no-repeat center center/cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+header h1 {
+  font-size: 40px;
+  font-family: "Lacquer", system-ui;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px #39ff14, 0 0 20px #39ff14;
+  z-index: 2;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+  }
+  100% {
+    text-shadow: 0 0 20px #39ff14, 0 0 30px #39ff14;
+  }
+}
+body {
+  font-family: "Young Serif", serif;
+  background: #1b0531;
+  color: black;
+  min-height: 100vH;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  cursor: url("../img/bee-cursor.png"), pointer;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  background: #E8F5C8;
+  color: #1B0531;
+  box-shadow: 0 0 10px #fff;
+  border-radius: 8px;
+}
+
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  margin-top: auto;
+}
+footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+footer .footer-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+#word {
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  margin: 20px 0;
+  text-overflow: ellipsis;
+}
+
+#hint {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+#keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+#keyboard .row {
+  display: flex;
+  justify-content: center;
+}
+#keyboard button {
+  width: 30px;
+  height: 30px;
+  font-size: 26px;
+  margin: 0.5px;
+  background: #39ff14;
+  border: solid 1px black;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  border-radius: 3px;
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+#keyboard button:hover {
+  background: #245711;
+}
+#keyboard button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+#keyboard button:active {
+  transform: scale(0.95);
+}
+
+#hangman {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0;
+  background: #0f0320;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+#hangman-img {
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#play-again {
+  background: #39ff14;
+  border: solid 1px black;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: none;
+  margin: 20px 0;
+}
+#play-again:hover {
+  background: #245711;
+}
+#play-again:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  #wrapper {
+    padding: 30px;
+    gap: 15px;
+  }
+  header {
+    height: 250px;
+  }
+  header h1 {
+    font-size: 60px;
+  }
+  footer .footer-content h3 {
+    font-size: 22px;
+  }
+  footer .footer-content p {
+    font-size: 16px;
+  }
+  p {
+    font-size: 18px;
+  }
+  #keyboard button {
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+    border-radius: 5px;
+  }
+  #word {
+    font-size: 38px;
+  }
+  #hint {
+    font-size: 26px;
+  }
+  #play-again {
+    padding: 15px 30px;
+    font-size: 20px;
+    min-width: 180px;
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    height: 250px;
+  }
+  header h1 {
+    font-size: 85px;
+  }
+  p {
+    font-size: 22px;
+  }
+  footer .footer-content h3 {
+    font-size: 28px;
+  }
+  footer .footer-content p {
+    font-size: 18px;
+  }
+  #word {
+    font-size: 52px;
+  }
+  #hint {
+    font-size: 30px;
+  }
+  #keyboard button {
+    width: 70px;
+    height: 70px;
+    font-size: 55px;
+    margin: 2px;
+    border-radius: 10px;
+    border: solid #000000;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+  }
+}
